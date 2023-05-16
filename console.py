@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for the entry point of the command interpreter."""
+"""the entry point Module"""
 
 import cmd
 from models.base_model import BaseModel
@@ -168,7 +168,7 @@ class HBNBCommand(cmd.Cmd):
             print(len(matches))
 
     def do_update(self, line):
-        """Updates an instance by adding or updating attribute.
+        """Updates an instance by adding/updating attribute.
         """
         if line == "" or line is None:
             print("** class name missing **")
@@ -210,7 +210,7 @@ class HBNBCommand(cmd.Cmd):
                     try:
                         value = cast(value)
                     except ValueError:
-                        pass  # fine, stay a string then
+                        pass
                 setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
 
